@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'legalaspro/tortoisebot-noetic-waypoints-ci'
-        GAZEBO_STARTUP_TIMEOUT = '90'  
+        GAZEBO_STARTUP_TIMEOUT = '60'  
     }
 
     stages {
@@ -32,8 +32,11 @@ pipeline {
 
                             # Wait for required topics using rostopic with timeout
                             echo 'Waiting for Gazebo simulation to be ready...'
-                            timeout ${GAZEBO_STARTUP_TIMEOUT} rostopic echo -n 1 /odom > /dev/null 2>&1 || \
-                                { echo 'ERROR: Timeout waiting for /odom topic'; exit 1; }
+                            timeout ${GAZEBO_STARTUP_TIMEOUT} bash -lc '
+                              until rostopic echo -n 1 /odom >/dev/null 2>&1; do
+                                sleep 1
+                              done
+                            ' || { echo "ERROR: Timeout waiting for /odom"; rostopic list || true; exit 1; }
                             echo 'Simulation ready - /odom topic available'
 
                             # Run the rostest
