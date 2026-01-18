@@ -1,5 +1,10 @@
 # ROS1 Jenkins CI Waypoints
 
+[![ROS1](https://img.shields.io/badge/ROS-1-blue)](http://wiki.ros.org/noetic)
+[![Jenkins](https://img.shields.io/badge/Jenkins-CI/CD-orange)](https://www.jenkins.io/)
+[![Docker](https://img.shields.io/badge/Docker-Builds-blue)](https://www.docker.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 A ROS1 project demonstrating CI/CD with Jenkins for the TortoiseBot waypoints navigation package.
 
 ## Project Structure
