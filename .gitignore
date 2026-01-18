@@ -1,0 +1,70 @@
+# --- ROS / catkin build products ---
+build/
+devel/
+install/
+log/
+logs/
+
+# Catkin tools (if you use catkin build)
+.catkin_tools/
+.catkin_workspace
+
+# ROS logs & runtime artifacts
+*.bag
+*.bag.active
+*.bag.orig
+*.bag.tmp
+rosout.log
+
+# Gazebo / Ignition (classic Gazebo is common with Noetic)
+~/.gazebo/
+.gazebo/
+*.world~
+
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+.pytest_cache/
+
+# --- C/C++ build artifacts ---
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.obj
+*.gcno
+*.gcda
+*.gcov
+compile_commands.json
+
+# --- IDE / Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# --- Node / frontend (if any) ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Docker / CI artifacts ---
+*.tar
+*.tgz
+
+# --- Misc ---
+.cache/
+tmp/
