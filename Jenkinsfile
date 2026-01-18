@@ -10,9 +10,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
-                dir('ros1_jenkins_ci_waypoints') {
-                    sh 'docker build -t ${DOCKER_IMAGE}:latest .'
-                }
+                sh 'docker build -t ${DOCKER_IMAGE}:latest .'
             }
         }
 
