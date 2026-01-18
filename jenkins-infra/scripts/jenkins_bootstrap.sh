@@ -132,10 +132,10 @@ sleep 5s
 # ========= URLs =========
 if [ -n "${SLOT_PREFIX:-}" ]; then
   LOCAL_URL="http://localhost:8080/${SLOT_PREFIX}/jenkins/"
-  WEBHOOK_PATH="/${SLOT_PREFIX}/jenkins/github-webhook/"   # <-- note trailing slash
+  WEBHOOK_PATH="/${SLOT_PREFIX}/jenkins/github-webhook/"  
 else
   LOCAL_URL="http://localhost:8080/"
-  WEBHOOK_PATH="/github-webhook/"                          # <-- note trailing slash
+  WEBHOOK_PATH="/github-webhook/"                        
 fi
 
 CONSTRUCT_URL=""
